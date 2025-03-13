@@ -1,0 +1,331 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container with Abstract Background */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 40px;
+  background: linear-gradient(135deg, #ffcc66, #ff9933, #ff6b6b, #4ecdc4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Abstract Background Elements */
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+
+.container::before {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.6), transparent);
+  top: -50px;
+  left: -50px;
+}
+
+.container::after {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(78, 205, 196, 0.6), transparent);
+  bottom: -100px;
+  right: -50px;
+}
+
+/* Image Wrapper */
+.image-wrapper {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.image-wrapper img:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.15) saturate(1.2);
+}
+
+/* Charity Form Container */
+.charity-form-container {
+  flex: 1;
+  max-width: 45%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 153, 51, 0.15);
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.charity-form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(255, 153, 51, 0.25);
+}
+
+.charity-form-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ff6600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.charity-form-container h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(to right, #ff9933, #ff6b6b);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+}
+
+.charity-form-container:hover h2::after {
+  width: 80px;
+}
+
+.charity-form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Form Group Styling */
+.form-group {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.form-group:hover label {
+  color: #ff6600;
+  transform: translateX(4px);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fafafa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #ff9933;
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.4), inset 0 0 4px rgba(255, 153, 51, 0.2);
+  outline: none;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #ff3300;
+  font-size: 12px;
+  margin-top: 6px;
+  display: none; /* Hide error messages by default */
+  animation: fadeIn 0.5s ease;
+}
+
+.error-message.active {
+  display: block; /* Show error messages */
+  animation: shake 0.5s; /* Shake effect on error */
+}
+
+/* Keyframes for Error Effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Form Actions Styling */
+.form-actions {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.form-actions .btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ff9933, #ff6b6b);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.form-actions .btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.form-actions .btn:hover::before {
+  width: 250px;
+  height: 250px;
+}
+
+.form-actions .btn:hover {
+  background: linear-gradient(90deg, #e68600, #e65b5b);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.5);
+}
+
+.form-actions .btn:active {
+  transform: scale(0.95);
+}
+
+.form-actions .btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  position: relative;
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.modal-content button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background: #ff9933;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.modal-content button:hover {
+  background: #e68600;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(230, 134, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .image-wrapper,
+  .charity-form-container {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .charity-form-container {
+    padding: 20px;
+  }
+
+  .form-group {
+    max-width: 100%;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}

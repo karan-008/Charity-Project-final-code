@@ -1,0 +1,15 @@
+<div class="adminnav">
+    <nav>
+      <ul>
+        <li>
+          <select #charitySelect (change)="handleCharityChange(charitySelect.value)">
+            <option value="select" disabled selected>Charity Options</option>
+            <option value="add">Add Charity</option>
+            <option value="view">View Charity</option>
+          </select>
+        </li>
+        <li><button routerLinkActive="active-link" [routerLink]="['/viewalldonation']" (click)="resetSelect(charitySelect)">Donations</button></li>
+        <li><button routerLinkActive="active-link" [routerLink]="['/adminviewfeedback']" (click)="resetSelect(charitySelect)">Feedbacks</button></li>
+      </ul>
+    </nav>
+  </div>

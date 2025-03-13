@@ -1,0 +1,252 @@
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+  }
+  
+  /* Heading */
+  h1 {
+    color: #2c3e50;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+  }
+  
+  h1::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: linePulse 2s ease-in-out infinite;
+  }
+  
+  /* Table Styles */
+  .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .table thead tr {
+    background: linear-gradient(90deg, #007bff, #00c853);
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  th {
+    padding: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  tbody tr {
+    background: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  tbody tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #fff, #f1f8e9);
+  }
+  
+  td {
+    padding: 15px;
+    border: none;
+    vertical-align: middle;
+  }
+  
+  /* Button Styles */
+  .btn {
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: none;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .btn-warning {
+    background: #ffa726;
+    color: white;
+  }
+  
+  .btn-warning:hover:enabled {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(110%);
+  }
+  
+  .btn-warning:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Dialog Box Styles */
+  .dialog-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    border: 3px solid #00c853;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: scaleUp 0.3s ease forwards;
+  }
+  
+  /* Dialog Header Simulation */
+  .dialog-box::before {
+    content: "Donation";
+    display: block;
+    background: linear-gradient(45deg, #00c853, #007bff);
+    color: white;
+    padding: 10px 15px;
+    margin: -20px -20px 20px -20px;
+    border-radius: 12px 12px 0 0;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Dialog Content */
+  .dialog-box label {
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .dialog-box p {
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+  }
+  
+  .dialog-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .dialog-box input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Dialog Buttons */
+  .dialog-box button {
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: none;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .dialog-box button:first-of-type {
+    background: #00c853;
+    color: white;
+  }
+  
+  .dialog-box button:last-of-type {
+    background: #e74c3c;
+    color: white;
+  }
+  
+  .dialog-box button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(110%);
+  }
+  
+  /* Success Message */
+  .dialog-box p:first-child {
+    background: #f1f8e9;
+    padding: 10px;
+    border-radius: 5px;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  /* Overlay (Add this to your HTML as <div class="overlay" *ngIf="dailogBox"></div> before .dialog-box) */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUp {
+    from {
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  @keyframes linePulse {
+    0% { width: 50px; }
+    50% { width: 70px; }
+    100% { width: 50px; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .table {
+      display: block;
+      overflow-x: auto;
+    }
+    .btn {
+      display: block;
+      margin: 5px 0;
+      width: 100%;
+    }
+    .dialog-box {
+      width: 90%;
+    }
+  }

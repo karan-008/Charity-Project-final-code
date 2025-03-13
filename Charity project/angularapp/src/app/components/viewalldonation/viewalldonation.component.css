@@ -1,0 +1,237 @@
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0f7fa, #80deea); /* Light blue gradient */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+  }
+  
+  /* Header styling */
+  h2 {
+    color: #004d40; /* Dark teal */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+  }
+  
+  h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #e91e63; /* Pink */
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Table Styles */
+  .donations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #b0bec5; /* Light gray border */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .donations-table th {
+    padding: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid #b0bec5; /* Light gray border */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #00796b, #004d40); /* Teal gradient */
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .donations-table tbody tr {
+    background: linear-gradient(90deg, #e0f2f1, #b2dfdb); /* Light teal gradient */
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .donations-table tbody tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #fff, #e0f7fa); /* Light blue gradient */
+  }
+  
+  .donations-table td {
+    padding: 15px;
+    border: 1px solid #b0bec5; /* Light gray border */
+    vertical-align: middle;
+  }
+  
+  /* No data message styling */
+  .no-data {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+  }
+  
+  /* Button Styles */
+  .btn {
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: none;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .btn-warning {
+    background: #ff5722; /* Deep orange */
+    color: white;
+  }
+  
+  .btn-danger {
+    background: #e91e63; /* Pink */
+    color: white;
+  }
+  
+  .btn-info {
+    background: #00796b; /* Teal */
+    color: white;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(110%);
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .modal-dialog {
+    max-width: 500px;
+    width: 90%;
+    transform: scale(0.7);
+    animation: scaleUp 0.3s ease forwards;
+  }
+  
+  .modal-content {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #00796b; /* Teal */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    background: linear-gradient(45deg, #00796b, #004d40); /* Teal gradient */
+    color: white;
+    padding: 15px 20px;
+    border-bottom: none;
+  }
+  
+  .modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+  }
+  
+  .close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+  
+  .modal-body {
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  
+  .modal-footer {
+    padding: 15px;
+    border-top: none;
+    background: #f9f9f9;
+  }
+  
+  .btn-secondary {
+    background: #95a5a6;
+    color: white;
+    border-radius: 25px;
+    padding: 8px 20px;
+  }
+  
+  .btn-secondary:hover {
+    background: #7f8c8d;
+  }
+  
+  /* Text Center */
+  .text-center {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-style: italic;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.7);
+    }
+  
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .donations-table {
+      display: block;
+      overflow-x: auto;
+    }
+  
+    .btn {
+      display: block;
+      margin: 5px 0;
+      width: 100%;
+    }
+  }
+  

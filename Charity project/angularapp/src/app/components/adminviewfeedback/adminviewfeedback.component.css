@@ -1,0 +1,194 @@
+/* Container */
+.feedbacks-table-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in;
+}
+
+/* Heading */
+h2 {
+  color: #2c3e50;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Table Styles */
+.feedbacks-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.feedbacks-table thead {
+  background: linear-gradient(90deg, #007bff, #00c853);
+  color: white;
+  text-transform: uppercase;
+}
+
+.feedbacks-table th {
+  padding: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.feedbacks-table tbody tr {
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feedbacks-table tbody tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(90deg, #fff, #f1f8e9);
+}
+
+.feedbacks-table td {
+  padding: 15px;
+  border: none;
+  vertical-align: middle;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Button Styles */
+.feedbacks-table button {
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: none;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #3498db;
+  color: white;
+}
+
+.feedbacks-table button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  filter: brightness(110%);
+}
+
+/* Dialog Box Styles */
+.dialog-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.dialog-content {
+  max-width: 500px;
+  width: 90%;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid #00c853;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(0.7);
+  animation: scaleUp 0.3s ease forwards;
+}
+
+.dialog-content h3 {
+  background: linear-gradient(45deg, #00c853, #007bff);
+  color: white;
+  padding: 15px 20px;
+  margin: 0;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-content p {
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  background: #f9f9f9;
+}
+
+.dialog-content button {
+  display: block;
+  margin: 15px auto;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #95a5a6;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.dialog-content button:hover {
+  background: #7f8c8d;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedbacks-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .feedbacks-table button {
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+  }
+}

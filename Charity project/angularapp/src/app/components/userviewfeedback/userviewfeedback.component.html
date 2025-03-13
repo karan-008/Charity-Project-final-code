@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>My Feedback</h1>
+    <table class="feedbacks-table" border="2px">
+      <thead>
+        <tr>
+          <th>Sl.No</th>
+          <th>Feedback</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="feedbacks.length === 0 && !errorMessage">
+          <td colspan="3" class="text-center">Oops! No Feedback Found.</td>
+        </tr>
+        <tr *ngFor="let feedback of feedbacks; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ feedback.feedbackText }}</td>
+          <td><button (click)="confirmDelete(feedback.feedbackId)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="selectedFeedbackId !== null" class="dialog-box">
+    <div class="dialog-content">
+      <h3>Are you sure you want to delete this feedback?</h3>
+      <button (click)="deleteFeedback()">Delete</button>
+      <button (click)="closeDialog()">Cancel</button>
+    </div>
+  </div>

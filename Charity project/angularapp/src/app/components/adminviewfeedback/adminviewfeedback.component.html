@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Feedback Details</h2>
+    <table class="feedbacks-table" border="2px">
+        <thead>
+            <tr>
+                <th>Sl.No</th>
+                <th>User Name</th>
+                <th>Feedback</th>
+                <th>Posted Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="feedbacks.length === 0">
+                <td colspan="5" class="text-center">Oops! No Feedback Found.</td>
+            </tr>
+            <ng-container *ngIf="feedbacks.length > 0">
+                <tr *ngFor="let feedback of feedbacks; index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{feedback.user?.username}}</td>
+                    <td>{{feedback.feedbackText}}</td>
+                    <td>{{feedback.date | date:'mediumDate'}}</td>
+                    <td><button (click)="showProfile(feedback.user)">Show Profile</button></td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+ 
+<div *ngIf="selectedProfile" class="dialog-box">
+    <div class="dialog-content">
+        <h3>Profile</h3>
+        <p><strong>Username:</strong> {{ selectedProfile?.username }}</p>
+        <p><strong>Email:</strong> {{ selectedProfile?.email }}</p>
+        <p><strong>Mobile Number:</strong> {{ selectedProfile?.mobile }}</p>
+        <button (click)="closeDialog()">Close</button>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="container">
+    <h2>Charities</h2>
+    <table class="table table-bordered">
+        <thead class="header-artistic">
+            <tr>
+                <th>S.No</th>
+                <th>Charity Name</th>
+                <th>Description</th>
+                <th>Founder</th>
+                <th>Creation Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="charities.length === 0">
+                <td colspan="7" class="text-center">Oops! No Charities Found.</td>
+            </tr>
+            <tr *ngFor="let charity of charities; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ charity.charityName }}</td>
+                <td>{{ charity.description }}</td>
+                <td>{{ charity.founder }}</td>
+                <td>{{ charity.creationDate | date:'mediumDate' }}</td>
+                <td>{{ charity.status }}</td>
+                <td>
+                    <button (click)="editCharity(charity.charityId)" class="btn btn-warning">Edit</button>
+                    <button (click)="confirmDelete(charity.charityId)" class="btn btn-danger">Delete</button>
+                    <button (click)="checkDonation(charity.charityId)" class="btn btn-info">Check Donation</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal for displaying total donation amount -->
+    <div *ngIf="showModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="donationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="donationModalLabel">Total Donation Amount</h3>
+                    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Total Donation Amount: {{ totalDonationAmount }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div *ngIf="showDeleteConfirmation" class="modal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="deleteModalLabel">Confirm Deletion</h3>
+                    <button type="button" class="close" aria-label="Close" (click)="cancelDelete()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this charity?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" (click)="deleteCharity()">Delete</button>
+                    <button type="button" class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Modal -->
+    <div *ngIf="showSuccessMessage" class="modal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Charity deleted successfully!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,213 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  min-height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* New gradient background */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading Style */
+.container h1 {
+  font-size: 32px;
+  color: #2c3e50; /* Dark blue text for a professional look */
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  animation: fadeInDown 1s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Add text shadow for better contrast */
+  position: relative;
+}
+
+.container h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #3498db; /* Blue line color matching the theme */
+  margin: 10px auto;
+  border-radius: 5px;
+  animation: lineAnimation 2s infinite;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #e74c3c; /* Red color for error messages */
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block; /* Show error messages */
+  animation: fadeIn 0.5s ease;
+}
+
+/* Feedbacks Table Styling */
+.feedbacks-table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow around the table */
+}
+
+.feedbacks-table thead {
+  background: #3498db; /* Blue background for the header */
+  color: white;
+}
+
+.feedbacks-table th,
+.feedbacks-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.feedbacks-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.feedbacks-table tbody tr:hover {
+  background: #e8e8e8;
+}
+
+.feedbacks-table .text-center {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+}
+
+.feedbacks-table button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c; /* Red color for delete buttons */
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.feedbacks-table button:hover {
+  background: #c0392b; /* Darker red on hover */
+  transform: scale(1.05);
+}
+
+/* Dialog Box Styling */
+.dialog-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.dialog-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  position: relative;
+  animation: fadeInUp 0.5s ease;
+}
+
+.dialog-content h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.dialog-content button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #e74c3c; /* Red color for buttons */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dialog-content button:hover {
+  background: #c0392b; /* Darker red on hover */
+  transform: translateY(-2px);
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lineAnimation {
+  0%, 100% {
+    width: 50px;
+  }
+  50% {
+    width: 100px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .feedbacks-table {
+    font-size: 14px;
+  }
+
+  .dialog-content {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,84 @@
+
+
+
+/* Usernav container */
+.usernav nav ul {
+    list-style: none;
+    padding: 10px 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    gap: 1.5rem; /* Consistent spacing */
+    background: linear-gradient(90deg, #333, #404040); /* Subtle gradient */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeInNav 0.5s ease-in-out; /* Entry animation */
+  }
+  
+  /* Fade-in animation for nav */
+  @keyframes fadeInNav {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* List item styling */
+  .usernav nav ul li {
+    position: relative;
+  }
+  
+  /* Button styling */
+  .usernav nav ul li button {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #4CAF50, #388E3C); /* Green gradient */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(76, 175, 80, 0.2);
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hover effect */
+  .usernav nav ul li button:hover {
+    background: linear-gradient(90deg, #388E3C, #2E7D32);
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  }
+  
+  /* Active/click effect */
+  .usernav nav ul li button:active {
+    transform: translateY(1px); /* Press-down effect */
+    box-shadow: 0 1px 4px rgba(76, 175, 80, 0.2);
+  }
+  
+  /* Optional active state (requires routerLinkActive) */
+  .usernav nav ul li button.active {
+    background: linear-gradient(90deg, #66BB6A, #4CAF50);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .usernav nav ul {
+      flex-wrap: wrap; /* Allow wrapping if screen is too small */
+      gap: 1rem;
+      padding: 15px;
+    }
+  
+    .usernav nav ul li button {
+      width: 100%; /* Full width on small screens */
+      text-align: center;
+    }
+  }
+  

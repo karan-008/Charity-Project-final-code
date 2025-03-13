@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Charities</h1>
+  <table class="table" border="2px">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Charity Name</th>
+        <th>Description</th>
+        <th>Founder</th>
+        <th>Donation Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let charity of charities; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ charity.charityName }}</td>
+        <td>{{ charity.description }}</td>
+        <td>{{ charity.founder }}</td>
+        <td>{{ charity.creationDate | date }}</td>
+        <td>{{ charity.status }}</td>
+        <td><button (click)="donate(charity.charityId)" class="btn btn-warning" [disabled]="charity.status !== 'Active'">Donate</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="dailogBox" class="dialog-box">
+    <div *ngIf="successMessage; else donationForm">
+      <p>{{ successMessage }}</p>
+      <button (click)="close()">Close</button>
+    </div>
+    <ng-template #donationForm>
+      <label for="amount">Donate to Charity</label>
+      <p>Donate Amount</p>
+      <input id="amount" type="number" [(ngModel)]="newDonate.amount" name="amount" min="1" required>
+      <button (click)="donation()" [disabled]="newDonate.amount<=0">Donate</button>
+      <button (click)="close()">Close</button>
+    </ng-template>
+  </div>
+</div>

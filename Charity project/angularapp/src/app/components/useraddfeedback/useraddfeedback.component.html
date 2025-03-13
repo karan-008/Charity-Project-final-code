@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Add Feedback</h2>
+  <form [formGroup]="feedbackform" (ngSubmit)="submit()">
+    <h3>Feedback</h3>
+    <div>
+      <textarea name="feedback" formControlName="feedbackText" cols="30" rows="10" required></textarea>
+      <div *ngIf="feedbackText.invalid && (feedbackText.touched || feedbackText.dirty)">
+        *Feedback is required
+      </div>
+    </div>
+    <div>
+      <button type="submit" [disabled]="feedbackform.invalid">Submit</button>
+    </div>
+  </form>
+</div>
+
+<!-- Popup Modal -->
+<div [ngClass]="{'popup': true, 'show': isPopupVisible}">
+  <div class="popup-content">
+    <p>{{ message }}</p>
+    <button (click)="closePopup()">OK</button>
+  </div>
+</div>

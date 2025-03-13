@@ -1,0 +1,124 @@
+
+
+
+
+/* Adminnav container */
+.adminnav nav ul {
+    list-style: none;
+    padding: 10px 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    gap: 1.5rem; /* Consistent spacing */
+    background: linear-gradient(90deg, #333, #404040); /* Subtle gradient */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeInNav 0.5s ease-in-out; /* Entry animation */
+  }
+  
+  /* Fade-in animation for nav */
+  @keyframes fadeInNav {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* List item styling */
+  .adminnav nav ul li {
+    position: relative;
+  }
+  
+  /* Button styling */
+  .adminnav nav ul li button {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Blue gradient */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hover effect */
+  .adminnav nav ul li button:hover {
+    background: linear-gradient(90deg, #0056b3, #003d82);
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Active/click effect */
+  .adminnav nav ul li button:active {
+    transform: translateY(1px); /* Press-down effect */
+    box-shadow: 0 1px 4px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Optional active state (requires routerLinkActive) */
+  .adminnav nav ul li button.active {
+    background: linear-gradient(90deg, #42A5F5, #007bff);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  }
+  
+  /* Select styling */
+  .adminnav nav ul li select {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 35px;
+  }
+  
+  /* Select hover and focus */
+  .adminnav nav ul li select:hover {
+    background-color: #555;
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  }
+  
+  .adminnav nav ul li select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .adminnav nav ul {
+      flex-wrap: wrap; /* Allow wrapping if screen is too small */
+      gap: 1rem;
+      padding: 15px;
+    }
+  
+    .adminnav nav ul li button,
+    .adminnav nav ul li select {
+      width: 100%; /* Full width on small screens */
+      text-align: center;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  

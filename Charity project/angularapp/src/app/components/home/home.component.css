@@ -1,0 +1,200 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+/* Hero Section with Background Image */
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  padding: 50px;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: url('https://c0.wallpaperflare.com/preview/287/860/54/team-ethnicity-group-hands.jpg') center/cover no-repeat; /* Replace with your image */
+  color: white;
+  text-align: center;
+}
+
+/* Overlay for Readability */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 0;
+}
+
+/* Content Box */
+.content-box {
+  flex: 1;
+  min-width: 300px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Image */
+.hero-image {
+  flex: 1;
+  min-width: 400px;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+/* Title and Description Styling */
+.title {
+  font-size: 3em;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  color: #34495e;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2em;
+  color: #34495e;
+  line-height: 1.7;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Featured Causes Section */
+.features-section {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features-title {
+  font-size: 2.2em;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.features-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+ /* Feature Cards with Different Shadow Colors */
+ .feature-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card-1 {
+  box-shadow: 0 4px 15px rgba(255, 99, 71, 0.5); /* Tomato Shadow */
+}
+.feature-card-1:hover {
+  box-shadow: 0 0 20px 5px rgba(255, 99, 71, 0.7);
+}
+
+.feature-card-2 {
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.5); /* Emerald Shadow */
+}
+.feature-card-2:hover {
+  box-shadow: 0 0 20px 5px rgba(46, 204, 113, 0.7);
+}
+
+.feature-card-3 {
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5); /* Blue Shadow */
+}
+.feature-card-3:hover {
+  box-shadow: 0 0 20px 5px rgba(52, 152, 219, 0.7);
+}
+/* Icons */
+.feature-icon {
+  font-size: 2.5em;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+  }
+  .content-box {
+      min-width: 90%;
+      padding: 30px;
+  }
+  .hero-image {
+      min-width: 90%;
+      max-width: 400px;
+  }
+  .title {
+      font-size: 2.2em;
+  }
+  .subtitle {
+      font-size: 1.2em;
+  }
+  .description {
+      font-size: 1em;
+  }
+  .features-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .feature-card {
+      width: 90%;
+      max-width: 350px;
+  }
+}
